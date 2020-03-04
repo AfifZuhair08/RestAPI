@@ -4,7 +4,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-include_once '../../config/databse.php';
+include_once '../../config/database.php';
 include_once '../../models/post.php';
 
 //instantiate db & connect
@@ -25,7 +25,7 @@ if($num > 0){
 
     //post array
     $posts_arr = array();
-    $posts_arr['data'] = array();
+    //$posts_arr['data'] = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
@@ -41,6 +41,7 @@ if($num > 0){
         );
 
         //push to data
+        //array_push($posts_arr['data'], $post_item);
         array_push($posts_arr['data'], $post_item);
     }
 

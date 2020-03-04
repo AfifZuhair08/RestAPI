@@ -15,15 +15,25 @@ class Post{
     public $username;
     public $password;
 
+    //contructor with db
+    public function __construct($db){
+        $this->conn = $db;
+    }
+
     //get posts
     public function read(){
 
         //create query
         $query = 'SELECT
-                all
+                u.userID,
+                u.fname,
+                u.lname,
+                u.email,
+                u.username,
+                u.password 
                 FROM
-                '. $this->table .' u
-                ORDER BY u.userID DESC';
+                '. $this->table . '
+                ORDER BY u.date DESC';
 
         //prepare statement
         $stmt = $this->conn->prepare($query);

@@ -3,7 +3,7 @@
 class Database {
     
     //db parameter
-    private $host = 'localhost';
+    private $host = '68.183.177.133';
     private $db_name = 'smart_toilet';
     private $username = 'root';
     private $password = 'Db#SmartToilet#1234';
@@ -19,7 +19,7 @@ class Database {
                 $this->username, $this->password);
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e){
-            echo 'Connection Error' .$e->getMessage();
+            echo 'Connection Error' . $e->getMessage();
         }
 
         return $this->$conn;
