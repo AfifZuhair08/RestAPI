@@ -6,14 +6,23 @@ class Post{
     private $conn;
     private $table = 'posts';
 
+    //FOR REFERNCES FROM READ
+    // $post_item = array(
+    //     'userID' => $userID,
+    //     'fullName' => $fullName,
+    //     'lastName' => $lastName,
+    //     'email' => $email,
+    //     'dateRegistered' => $dateRegistered,
+    //     'username' => $username,
+    // );
+
     //post properties
     public $userID;
-    public $fname;
-    public $lname;
+    public $fullName;
+    public $lastName;
     public $email;
-    public $date;
+    public $dateRegistered;
     public $username;
-    public $password;
 
     //contructor with db
     public function __construct($db){
@@ -26,11 +35,11 @@ class Post{
         //create query
         $query = 'SELECT
                 u.userID,
-                u.fname,
-                u.lname,
+                u.fullName,
+                u.lastName,
                 u.email,
+                u.dateRegistered,
                 u.username,
-                u.password 
                 FROM
                 '. $this->table . '
                 ORDER BY u.date DESC';

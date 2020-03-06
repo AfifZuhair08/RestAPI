@@ -32,12 +32,11 @@ if($num > 0){
 
         $post_item = array(
             'userID' => $userID,
-            'fname' => $fname,
-            'lname' => $lname,
+            'fullName' => $fullName,
+            'lastName' => $lastName,
             'email' => $email,
-            'date' => $date,
+            'dateRegistered' => $dateRegistered,
             'username' => $username,
-            'password' => $password
         );
 
         //push to data
